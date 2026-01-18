@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -pthread
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -pthread -static-libgcc -static-libstdc++ -static
 INCLUDES = -I./include
 
 # 源文件
