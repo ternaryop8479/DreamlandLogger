@@ -6,23 +6,40 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #333;
     min-height: 100vh;
     padding: 20px;
+    position: relative;
+}
+
+/* 添加半透明遮罩层以提高可读性 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 header {
     text-align: center;
     color: white;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 header h1 {
     font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
-
 .container {
     display: grid;
     grid-template-columns: 250px 1fr 300px;
