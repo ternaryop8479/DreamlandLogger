@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC服务器管理系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎮 MC服务器管理系统</h1>
+    </header>
+    
+    <div class="container">
+        <!-- 左侧栏 -->
+        <aside class="sidebar left">
+            <section class="panel">
+                <h2>👑 OP 名单</h2>
+                <ul id="ops-list" class="player-list"></ul>
+            </section>
+            
+            <section class="panel">
+                <h2>🚫 被Ban玩家</h2>
+                <div id="banned-list" class="banned-list"></div>
+            </section>
+        </aside>
+        
+        <!-- 中间日志区 -->
+        <main class="main-content">
+            <section class="panel log-panel">
+                <h2>📜 服务器日志</h2>
+                <div id="log-container" class="log-container"></div>
+            </section>
+        </main>
+        
+        <!-- 右侧栏 -->
+        <aside class="sidebar right">
+            <section class="panel">
+                <h2>🟢 在线玩家</h2>
+                <ul id="online-list" class="player-list"></ul>
+            </section>
+            
+            <section class="panel">
+                <h2>📋 命令申请列表</h2>
+                <div id="requests-list" class="requests-list"></div>
+            </section>
+        </aside>
+    </div>
+    
+    <!-- 底部申请表单 -->
+    <footer class="submit-panel">
+        <h2>📝 提交命令申请</h2>
+        <form id="request-form" class="request-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="applicant">申请人:</label>
+                    <input type="text" id="applicant" name="applicant" required 
+                           list="players-datalist" placeholder="选择玩家">
+                    <datalist id="players-datalist"></datalist>
+                </div>
+                
+                <div class="form-group">
+                    <label for="command">命令:</label>
+                    <input type="text" id="command" name="command" required 
+                           placeholder="/pardon Steve">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reason">申请原因:</label>
+                    <input type="text" id="reason" name="reason" required 
+                           placeholder="说明原因">
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">检讨书(可选):</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">提交申请</button>
+            </div>
+        </form>
+    </footer>
+    
+    <!-- 图片查看模态框 -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
